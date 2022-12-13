@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("DOMContentLoaded", () => {
   const addProduct = document.getElementById("add-product");
   const name = document.getElementById("name");
   const price = document.getElementById("price");
@@ -6,9 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const company = document.getElementById("company");
   const featured = document.getElementById("featured");
   const productId = document.getElementById("id");
-
+console.log("first")
   addProduct.addEventListener("click", async (e) => {
+    console.log("first")
     e.preventDefault();
+    console.log("first")
     let product = {
       name: name.value,
       price: price.value,
@@ -41,6 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
           body: JSON.stringify(product),
         }
       );
+
+      console.log("first")
       let products = await result.json();
       console.log(products);
       if (products?.message === "success") {
@@ -55,4 +59,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //   console.log(new FormData(formElem));
   });
-});
+// });
