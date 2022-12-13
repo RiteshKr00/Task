@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const fetchButton = document.getElementById("fetch");
   const element = document.querySelector("#product-table");
   fetchButton.addEventListener("click", async () => {
-    const result = await fetch("http://localhost:8080/api/v1/product/all", {
+    const result = await fetch(`https://task-production-8ff6.up.railway.app/api/v1/product/all`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

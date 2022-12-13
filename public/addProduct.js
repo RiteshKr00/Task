@@ -30,14 +30,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     validate();
     if (valid) {
-      const result = await fetch("http://localhost:8080/api/v1/product/add", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        crossDomain: true,
-        body: JSON.stringify(product),
-      });
+      const result = await fetch(
+        `https://task-production-8ff6.up.railway.app/api/v1/product/add`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          crossDomain: true,
+          body: JSON.stringify(product),
+        }
+      );
       let products = await result.json();
       console.log(products);
       if (products?.message === "success") {
